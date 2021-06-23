@@ -1,0 +1,50 @@
+{% extends "base.html" %}
+{% load static %}
+
+
+{% block javascript %}
+<script>
+// Submit post on submit
+$(document).ready(function(){
+    $('#myButton').on('submit',function(event){
+        event.preventDefault();
+        console.log("form submitted!")  // sanity check
+        // create_post();
+    });
+    $('#myButton').on('click',function(event){
+        event.preventDefault();
+        console.log("form submitted!")  // sanity check
+        // create_post();
+    });
+    $('#myForm').on('submit',function(event){
+        event.preventDefault();
+        console.log("form submitted!")  // sanity check
+        // create_post();
+    });
+});
+
+</script>
+{% endblock javascript %}
+
+{% block content %}
+
+<div class="container">
+    <div class="infinite-container list">
+        {% for pop_slug, pop_name, pop_ratings, pop_img, pop_released, pop_to_play, pop_ratings_count in numbers %}
+        <div class="infinite-item">
+            <div class="list-group">
+                <a style="text-decoration:none; color:#212529;" class="name" href="{% url 'homepage:popgames' pop_slug %}">
+                <div class="list-group-item " aria-current="true">
+               <img width=100px height=80px src="{{ pop_img }}" alt="">{{ pop_name }}
+                </div>
+                </a>
+            </div>
+        </div>
+        {% endfor %}
+    </div>
+    {% if numbers.has_next %}
+    <a class="infinite-more-link" href="?page={{ numbers.next_page_number }}">More</a>
+    {% endif %}
+</div>
+
+{% endblock content %}

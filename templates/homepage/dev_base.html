@@ -1,0 +1,921 @@
+{% extends "base.html" %}
+{% load static %}
+{% load tz %}
+
+
+
+{% block header_style %}
+@media only screen and (max-width: 450px) {
+    .carouselhide {
+       display: none;
+    }
+}
+
+@media only screen and (min-width: 451px) {
+    .carouselshow {
+        display: none;
+    }
+}
+{% endblock header_style %}
+
+
+{% block content %}
+
+<div class="container">
+<div id="carouselCaptions1" class="carousel slide d-none d-xl-block" data-ride="carousel">
+    <div class="carousel-inner" style="max-height:60vmin;min-height:74vmin;max-width:60rem;margin-bottom: 0rem;">
+            <ol class="carousel-indicators" style="height:13vmin;">
+                <li data-target="#carouselCaptions1" data-slide-to="0" class="active"></li>
+                <li data-target="#carouselCaptions1" data-slide-to="1" class=""></li>
+                <li data-target="#carouselCaptions1" data-slide-to="2" class=""></li>
+                <li data-target="#carouselCaptions1" data-slide-to="3" class=""></li>
+                <li data-target="#carouselCaptions1" data-slide-to="4" class=""></li>
+                <li data-target="#carouselCaptions1" data-slide-to="5" class=""></li>
+                <li data-target="#carouselCaptions1" data-slide-to="6" class=""></li>
+                <li data-target="#carouselCaptions1" data-slide-to="7" class=""></li>
+            </ol>
+            <div class="carousel-item active h-100" style="max-height:60vmin; min-height:60vmin;min-width:100%">
+                <a target="_blank" style="text-decoration:none" href="{{ entries.0.1 }}">
+                    <div class="carousel-caption" style="color: black;position: relative;padding-bottom: 0rem;margin-bottom: -1rem;">
+                        <h5 class="" style="margin-left:-1.6%;margin-right:2%">{{ entries.0.0 }}</h5>
+                    </div>
+                    <img class="w-100" style="min-height:60vmin;max-height:60vmin;object-fit:fill;"
+                         data-src="holder.js/800x400?auto=yes&amp;bg=777&amp;fg=555&amp;text=First slide"
+                         alt="First slide [800x400]" src="{{ entries.0.9 }}" data-holder-rendered="true">
+                    <div class="carousel-caption" style="color: black;position: relative;z-index:2;padding-bottom:2rem;">
+                          <p class="d-block" style="width:98%;margin-left:-1.5%">{{ entries.0.2 }}</p>
+                        <small class="d-block text-muted" style="width:98%;margin-left:-1.5%;margin-top:-1rem">{{ entries.0.7 }}</small>
+                    </div>
+                </a>
+            </div>
+            <div class="carousel-item" style="max-height:60vmin; min-height:60vmin;">
+                <a target="_blank" style="text-decoration:none" href="{{ entries.1.1 }}">
+                    <div class="carousel-caption" style="color: black;position: relative;padding-bottom: 0rem;margin-bottom: -1rem;">
+                        <h5 style="margin-left:-1.6%">{{ entries.1.0 }}</h5>
+                    </div>
+                    <img class="w-100" style="min-height:60vmin;max-height:60vmin;object-fit:fill;"
+                         data-src="holder.js/800x400?auto=yes&amp;bg=777&amp;fg=555&amp;text=First slide"
+                         alt="First slide [800x400]" src="{{ entries.1.9 }}" data-holder-rendered="true">
+                    <div class="carousel-caption" style="color: black;position: relative;z-index:2;padding-bottom:2rem;">
+                          <p class="d-block" style="width:98%;margin-left:-1.5%">{{ entries.1.2 }}</p>
+                        <small class="d-block text-muted" style="width:98%;margin-left:-1.5%;margin-top:-1rem">{{ entries.1.7 }}</small>
+                    </div>
+                </a>
+            </div>
+            <div class="carousel-item" style="max-height:60vmin; min-height:60vmin;">
+                <a target="_blank" style="text-decoration:none" href="{{ entries.2.1 }}">
+                    <div class="carousel-caption" style="color: black;position: relative;padding-bottom: 0rem;margin-bottom: -1rem;">
+                        <h5 style="margin-left:-1.6%">{{ entries.2.0 }}</h5>
+                    </div>
+                    <img class="w-100" style="min-height:60vmin;max-height:60vmin;object-fit:fill;"
+                         data-src="holder.js/800x400?auto=yes&amp;bg=777&amp;fg=555&amp;text=First slide"
+                         alt="First slide [800x400]" src="{{ entries.2.9 }}" data-holder-rendered="true">
+                    <div class="carousel-caption" style="color: black;position: relative;z-index:2;padding-bottom:2rem;">
+                          <p class="d-block" style="width:98%;margin-left:-1.5%">{{ entries.2.2 }}</p>
+                        <small class="d-block text-muted" style="width:98%;margin-left:-1.5%;margin-top:-1rem">{{ entries.2.7 }}</small>
+                    </div>
+                </a>
+            </div>
+
+            <div class="carousel-item" style="max-height:60vmin; min-height:60vmin;">
+                <a target="_blank" style="text-decoration:none" href="{{ entries.3.1 }}">
+                    <div class="carousel-caption" style="color: black;position: relative;padding-bottom: 0rem;margin-bottom: -1rem;">
+                        <h5 style="margin-left:-1.6%">{{ entries.3.0 }}</h5>
+                    </div>
+                    <img class="w-100" style="min-height:60vmin;max-height:60vmin;object-fit:fill;"
+                         data-src="holder.js/800x400?auto=yes&amp;bg=777&amp;fg=555&amp;text=First slide"
+                         alt="First slide [800x400]" src="{{ entries.3.9 }}" data-holder-rendered="true">
+                    <div class="carousel-caption" style="color: black;position: relative;z-index:2;padding-bottom:2rem;">
+                          <p class="d-block" style="width:98%;margin-left:-1.5%">{{ entries.3.2 }}</p>
+                        <small class="d-block text-muted" style="width:98%;margin-left:-1.5%;margin-top:-1rem">{{ entries.3.7 }}</small>
+                    </div>
+                </a>
+            </div>
+            <div class="carousel-item" style="max-height:60vmin; min-height:60vmin;">
+                <a target="_blank" style="text-decoration:none" href="{{ entries.4.1 }}">
+                    <div class="carousel-caption" style="color: black;position: relative;padding-bottom: 0rem;margin-bottom: -1rem;">
+                        <h5 style="margin-left:-1.6%">{{ entries.4.0 }}</h5>
+                    </div>
+                    <img class="w-100" style="min-height:60vmin;max-height:60vmin;object-fit:fill;"
+                         data-src="holder.js/800x400?auto=yes&amp;bg=777&amp;fg=555&amp;text=First slide"
+                         alt="First slide [800x400]" src="{{ entries.4.9 }}" data-holder-rendered="true">
+                    <div class="carousel-caption" style="color: black;position: relative;z-index:2;padding-bottom:2rem;">
+                          <p class="d-block" style="width:98%;margin-left:-1.5%">{{ entries.4.2 }}</p>
+                        <small class="d-block text-muted" style="width:98%;margin-left:-1.5%;margin-top:-1rem">{{ entries.4.7 }}</small>
+                    </div>
+                </a>
+            </div>
+            <div class="carousel-item" style="max-height:60vmin; min-height:60vmin;">
+                <a target="_blank" style="text-decoration:none" href="{{ entries.5.1 }}">
+                    <div class="carousel-caption" style="color: black;position: relative;padding-bottom: 0rem;margin-bottom: -1rem;">
+                        <h5 style="margin-left:-1.6%">{{ entries.5.0 }}</h5>
+                    </div>
+                    <img class="w-100" style="min-height:60vmin;max-height:60vmin;object-fit:fill;"
+                         data-src="holder.js/800x400?auto=yes&amp;bg=777&amp;fg=555&amp;text=First slide"
+                         alt="First slide [800x400]" src="{{ entries.5.9 }}" data-holder-rendered="true">
+                    <div class="carousel-caption" style="color: black;position: relative;z-index:2;padding-bottom:2rem;">
+                          <p class="d-block" style="width:98%;margin-left:-1.5%">{{ entries.5.2 }}</p>
+                        <small class="d-block text-muted" style="width:98%;margin-left:-1.5%;margin-top:-1rem">{{ entries.5.7 }}</small>
+                    </div>
+                </a>
+            </div>
+            <div class="carousel-item" style="max-height:60vmin; min-height:60vmin;">
+                <a target="_blank" style="text-decoration:none" href="{{ entries.6.1 }}">
+                    <div class="carousel-caption" style="color: black;position: relative;padding-bottom: 0rem;margin-bottom: -1rem;">
+                        <h5 style="margin-left:-1.6%">{{ entries.6.0 }}</h5>
+                    </div>
+                    <img class="w-100" style="min-height:60vmin;max-height:60vmin;object-fit:fill;"
+                         data-src="holder.js/800x400?auto=yes&amp;bg=777&amp;fg=555&amp;text=First slide"
+                         alt="First slide [800x400]" src="{{ entries.6.9 }}" data-holder-rendered="true">
+                    <div class="carousel-caption" style="color: black;position: relative;z-index:2;padding-bottom:2rem;">
+                          <p class="d-block" style="width:98%;margin-left:-1.5%">{{ entries.6.2 }}</p>
+                        <small class="d-block text-muted" style="width:98%;margin-left:-1.5%;margin-top:-1rem">{{ entries.6.7 }}</small>
+                    </div>
+                </a>
+            </div>
+            <div class="carousel-item" style="max-height:60vmin; min-height:60vmin;">
+                <a target="_blank" style="text-decoration:none" href="{{ entries.7.1 }}">
+                    <div class="carousel-caption" style="color: black;position: relative;padding-bottom: 0rem;margin-bottom: -1rem;">
+                        <h5 style="margin-left:-1.6%">{{ entries.7.0 }}</h5>
+                    </div>
+                    <img class="w-100" style="min-height:60vmin;max-height:60vmin;object-fit:fill;"
+                         data-src="holder.js/800x400?auto=yes&amp;bg=777&amp;fg=555&amp;text=First slide"
+                         alt="First slide [800x400]" src="{{ entries.7.9 }}" data-holder-rendered="true">
+                    <div class="carousel-caption" style="color: black;position: relative;z-index:2;padding-bottom:2rem;">
+                          <p class="d-block" style="width:98%;margin-left:-1.5%">{{ entries.7.2 }}</p>
+                        <small class="d-block text-muted" style="width:98%;margin-left:-1.5%;margin-top:-1rem">{{ entries.7.7 }}</small>
+                    </div>
+                </a>
+            </div>
+            <a class="carousel-control-prev" href="#carouselCaptions1" role="button" data-slide="prev">
+                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                <span class="sr-only"></span>
+            </a>
+            <a class="carousel-control-next" href="#carouselCaptions1" role="button" data-slide="next">
+                <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                <span class="sr-only"></span>
+            </a>
+        </div>
+</div>
+
+<div id="carouselCaptions2" class="carousel slide d-none d-lg-block d-xl-none" data-ride="carousel">
+    <div class="carousel-inner" style="max-height:60vmin;min-height:74vmin;max-width:60rem;margin-bottom: 0rem;">
+            <ol class="carousel-indicators" style="height:13vmin;">
+                <li data-target="#carouselCaptions2" data-slide-to="0" class="active"></li>
+                <li data-target="#carouselCaptions2" data-slide-to="1" class=""></li>
+                <li data-target="#carouselCaptions2" data-slide-to="2" class=""></li>
+                <li data-target="#carouselCaptions2" data-slide-to="3" class=""></li>
+                <li data-target="#carouselCaptions2" data-slide-to="4" class=""></li>
+                <li data-target="#carouselCaptions2" data-slide-to="5" class=""></li>
+                <li data-target="#carouselCaptions2" data-slide-to="6" class=""></li>
+                <li data-target="#carouselCaptions2" data-slide-to="7" class=""></li>
+            </ol>
+            <div class="carousel-item active h-100" style="max-height:60vmin; min-height:60vmin;min-width:100%">
+                <a target="_blank" style="text-decoration:none" href="{{ entries.0.1 }}">
+                    <div class="carousel-caption" style="color: black;position: relative;padding-bottom: 0rem;margin-bottom: -1rem;">
+                        <h5 class="" style="margin-left:-1.6%;margin-right:2%">{{ entries.0.0 }}</h5>
+                    </div>
+                    <img class="w-100" style="min-height:60vmin;max-height:60vmin;object-fit:fill;"
+                         data-src="holder.js/800x400?auto=yes&amp;bg=777&amp;fg=555&amp;text=First slide"
+                         alt="First slide [800x400]" src="{{ entries.0.9 }}" data-holder-rendered="true">
+                    <div class="carousel-caption" style="color: black;position: relative;z-index:2;padding-bottom:2rem;">
+                          <p class="d-block" style="width:98%;margin-left:-1.5%">{{ entries.0.2 }}</p>
+                        <small class="d-block text-muted" style="width:98%;margin-left:-1.5%;margin-top:-1rem">{{ entries.0.7 }}</small>
+                    </div>
+                </a>
+            </div>
+            <div class="carousel-item" style="max-height:60vmin; min-height:60vmin;">
+                <a target="_blank" style="text-decoration:none" href="{{ entries.1.1 }}">
+                    <div class="carousel-caption" style="color: black;position: relative;padding-bottom: 0rem;margin-bottom: -1rem;">
+                        <h5 style="margin-left:-1.6%">{{ entries.1.0 }}</h5>
+                    </div>
+                    <img class="w-100" style="min-height:60vmin;max-height:60vmin;object-fit:fill;"
+                         data-src="holder.js/800x400?auto=yes&amp;bg=777&amp;fg=555&amp;text=First slide"
+                         alt="First slide [800x400]" src="{{ entries.1.9 }}" data-holder-rendered="true">
+                    <div class="carousel-caption" style="color: black;position: relative;z-index:2;padding-bottom:2rem;">
+                          <p class="d-block" style="width:98%;margin-left:-1.5%">{{ entries.1.2 }}</p>
+                        <small class="d-block text-muted" style="width:98%;margin-left:-1.5%;margin-top:-1rem">{{ entries.1.7 }}</small>
+                    </div>
+                </a>
+            </div>
+            <div class="carousel-item" style="max-height:60vmin; min-height:60vmin;">
+                <a target="_blank" style="text-decoration:none" href="{{ entries.2.1 }}">
+                    <div class="carousel-caption" style="color: black;position: relative;padding-bottom: 0rem;margin-bottom: -1rem;">
+                        <h5 style="margin-left:-1.6%">{{ entries.2.0 }}</h5>
+                    </div>
+                    <img class="w-100" style="min-height:60vmin;max-height:60vmin;object-fit:fill;"
+                         data-src="holder.js/800x400?auto=yes&amp;bg=777&amp;fg=555&amp;text=First slide"
+                         alt="First slide [800x400]" src="{{ entries.2.9 }}" data-holder-rendered="true">
+                    <div class="carousel-caption" style="color: black;position: relative;z-index:2;padding-bottom:2rem;">
+                          <p class="d-block" style="width:98%;margin-left:-1.5%">{{ entries.2.2 }}</p>
+                        <small class="d-block text-muted" style="width:98%;margin-left:-1.5%;margin-top:-1rem">{{ entries.2.7 }}</small>
+                    </div>
+                </a>
+            </div>
+
+            <div class="carousel-item" style="max-height:60vmin; min-height:60vmin;">
+                <a target="_blank" style="text-decoration:none" href="{{ entries.3.1 }}">
+                    <div class="carousel-caption" style="color: black;position: relative;padding-bottom: 0rem;margin-bottom: -1rem;">
+                        <h5 style="margin-left:-1.6%">{{ entries.3.0 }}</h5>
+                    </div>
+                    <img class="w-100" style="min-height:60vmin;max-height:60vmin;object-fit:fill;"
+                         data-src="holder.js/800x400?auto=yes&amp;bg=777&amp;fg=555&amp;text=First slide"
+                         alt="First slide [800x400]" src="{{ entries.3.9 }}" data-holder-rendered="true">
+                    <div class="carousel-caption" style="color: black;position: relative;z-index:2;padding-bottom:2rem;">
+                          <p class="d-block" style="width:98%;margin-left:-1.5%">{{ entries.3.2 }}</p>
+                        <small class="d-block text-muted" style="width:98%;margin-left:-1.5%;margin-top:-1rem">{{ entries.3.7 }}</small>
+                    </div>
+                </a>
+            </div>
+            <div class="carousel-item" style="max-height:60vmin; min-height:60vmin;">
+                <a target="_blank" style="text-decoration:none" href="{{ entries.4.1 }}">
+                    <div class="carousel-caption" style="color: black;position: relative;padding-bottom: 0rem;margin-bottom: -1rem;">
+                        <h5 style="margin-left:-1.6%">{{ entries.4.0 }}</h5>
+                    </div>
+                    <img class="w-100" style="min-height:60vmin;max-height:60vmin;object-fit:fill;"
+                         data-src="holder.js/800x400?auto=yes&amp;bg=777&amp;fg=555&amp;text=First slide"
+                         alt="First slide [800x400]" src="{{ entries.4.9 }}" data-holder-rendered="true">
+                    <div class="carousel-caption" style="color: black;position: relative;z-index:2;padding-bottom:2rem;">
+                          <p class="d-block" style="width:98%;margin-left:-1.5%">{{ entries.4.2 }}</p>
+                        <small class="d-block text-muted" style="width:98%;margin-left:-1.5%;margin-top:-1rem">{{ entries.4.7 }}</small>
+                    </div>
+                </a>
+            </div>
+            <div class="carousel-item" style="max-height:60vmin; min-height:60vmin;">
+                <a target="_blank" style="text-decoration:none" href="{{ entries.5.1 }}">
+                    <div class="carousel-caption" style="color: black;position: relative;padding-bottom: 0rem;margin-bottom: -1rem;">
+                        <h5 style="margin-left:-1.6%">{{ entries.5.0 }}</h5>
+                    </div>
+                    <img class="w-100" style="min-height:60vmin;max-height:60vmin;object-fit:fill;"
+                         data-src="holder.js/800x400?auto=yes&amp;bg=777&amp;fg=555&amp;text=First slide"
+                         alt="First slide [800x400]" src="{{ entries.5.9 }}" data-holder-rendered="true">
+                    <div class="carousel-caption" style="color: black;position: relative;z-index:2;padding-bottom:2rem;">
+                          <p class="d-block" style="width:98%;margin-left:-1.5%">{{ entries.5.2 }}</p>
+                        <small class="d-block text-muted" style="width:98%;margin-left:-1.5%;margin-top:-1rem">{{ entries.5.7 }}</small>
+                    </div>
+                </a>
+            </div>
+            <div class="carousel-item" style="max-height:60vmin; min-height:60vmin;">
+                <a target="_blank" style="text-decoration:none" href="{{ entries.6.1 }}">
+                    <div class="carousel-caption" style="color: black;position: relative;padding-bottom: 0rem;margin-bottom: -1rem;">
+                        <h5 style="margin-left:-1.6%">{{ entries.6.0 }}</h5>
+                    </div>
+                    <img class="w-100" style="min-height:60vmin;max-height:60vmin;object-fit:fill;"
+                         data-src="holder.js/800x400?auto=yes&amp;bg=777&amp;fg=555&amp;text=First slide"
+                         alt="First slide [800x400]" src="{{ entries.6.9 }}" data-holder-rendered="true">
+                    <div class="carousel-caption" style="color: black;position: relative;z-index:2;padding-bottom:2rem;">
+                          <p class="d-block" style="width:98%;margin-left:-1.5%">{{ entries.6.2 }}</p>
+                        <small class="d-block text-muted" style="width:98%;margin-left:-1.5%;margin-top:-1rem">{{ entries.6.7 }}</small>
+                    </div>
+                </a>
+            </div>
+            <div class="carousel-item" style="max-height:60vmin; min-height:60vmin;">
+                <a target="_blank" style="text-decoration:none" href="{{ entries.7.1 }}">
+                    <div class="carousel-caption" style="color: black;position: relative;padding-bottom: 0rem;margin-bottom: -1rem;">
+                        <h5 style="margin-left:-1.6%">{{ entries.7.0 }}</h5>
+                    </div>
+                    <img class="w-100" style="min-height:60vmin;max-height:60vmin;object-fit:fill;"
+                         data-src="holder.js/800x400?auto=yes&amp;bg=777&amp;fg=555&amp;text=First slide"
+                         alt="First slide [800x400]" src="{{ entries.7.9 }}" data-holder-rendered="true">
+                    <div class="carousel-caption" style="color: black;position: relative;z-index:2;padding-bottom:2rem;">
+                          <p class="d-block" style="width:98%;margin-left:-1.5%">{{ entries.7.2 }}</p>
+                        <small class="d-block text-muted" style="width:98%;margin-left:-1.5%;margin-top:-1rem">{{ entries.7.7 }}</small>
+                    </div>
+                </a>
+            </div>
+            <a class="carousel-control-prev" href="#carouselCaptions2" role="button" data-slide="prev">
+                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                <span class="sr-only"></span>
+            </a>
+            <a class="carousel-control-next" href="#carouselCaptions2" role="button" data-slide="next">
+                <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                <span class="sr-only"></span>
+            </a>
+        </div>
+</div>
+
+<div id="carouselCaptions3" class="carousel slide d-none d-md-block d-lg-none" data-ride="carousel">
+    <div class="carousel-inner" style="max-height:60vmin;min-height:74vmin;max-width:60rem;margin-bottom: 0rem;">
+            <ol class="carousel-indicators" style="height:13vmin;">
+                <li data-target="#carouselCaptions3" data-slide-to="0" class="active"></li>
+                <li data-target="#carouselCaptions3" data-slide-to="1" class=""></li>
+                <li data-target="#carouselCaptions3" data-slide-to="2" class=""></li>
+                <li data-target="#carouselCaptions3" data-slide-to="3" class=""></li>
+                <li data-target="#carouselCaptions3" data-slide-to="4" class=""></li>
+                <li data-target="#carouselCaptions3" data-slide-to="5" class=""></li>
+                <li data-target="#carouselCaptions3" data-slide-to="6" class=""></li>
+                <li data-target="#carouselCaptions3" data-slide-to="7" class=""></li>
+            </ol>
+            <div class="carousel-item active h-100" style="max-height:60vmin; min-height:60vmin;min-width:100%">
+                <a target="_blank" style="text-decoration:none" href="{{ entries.0.1 }}">
+                    <div class="carousel-caption" style="color: black;position: relative;padding-bottom: 0rem;margin-bottom: -1rem;">
+                        <h5 class="" style="margin-left:-1.6%;margin-right:2%">{{ entries.0.0 }}</h5>
+                    </div>
+                    <img class="w-100" style="min-height:60vmin;max-height:60vmin;object-fit:fill;"
+                         data-src="holder.js/800x400?auto=yes&amp;bg=777&amp;fg=555&amp;text=First slide"
+                         alt="First slide [800x400]" src="{{ entries.0.9 }}" data-holder-rendered="true">
+                    <div class="carousel-caption" style="color: black;position: relative;z-index:2;padding-bottom:2rem;">
+                          <p class="d-block" style="width:98%;margin-left:-1.5%">{{ entries.0.2 }}</p>
+                        <small class="d-block text-muted" style="width:98%;margin-left:-1.5%;margin-top:-1rem">{{ entries.0.7 }}</small>
+                    </div>
+                </a>
+            </div>
+            <div class="carousel-item" style="max-height:60vmin; min-height:60vmin;">
+                <a target="_blank" style="text-decoration:none" href="{{ entries.1.1 }}">
+                    <div class="carousel-caption" style="color: black;position: relative;padding-bottom: 0rem;margin-bottom: -1rem;">
+                        <h5 style="margin-left:-1.6%">{{ entries.1.0 }}</h5>
+                    </div>
+                    <img class="w-100" style="min-height:60vmin;max-height:60vmin;object-fit:fill;"
+                         data-src="holder.js/800x400?auto=yes&amp;bg=777&amp;fg=555&amp;text=First slide"
+                         alt="First slide [800x400]" src="{{ entries.1.9 }}" data-holder-rendered="true">
+                    <div class="carousel-caption" style="color: black;position: relative;z-index:2;padding-bottom:2rem;">
+                          <p class="d-block" style="width:98%;margin-left:-1.5%">{{ entries.1.2 }}</p>
+                        <small class="d-block text-muted" style="width:98%;margin-left:-1.5%;margin-top:-1rem">{{ entries.1.7 }}</small>
+                    </div>
+                </a>
+            </div>
+            <div class="carousel-item" style="max-height:60vmin; min-height:60vmin;">
+                <a target="_blank" style="text-decoration:none" href="{{ entries.2.1 }}">
+                    <div class="carousel-caption" style="color: black;position: relative;padding-bottom: 0rem;margin-bottom: -1rem;">
+                        <h5 style="margin-left:-1.6%">{{ entries.2.0 }}</h5>
+                    </div>
+                    <img class="w-100" style="min-height:60vmin;max-height:60vmin;object-fit:fill;"
+                         data-src="holder.js/800x400?auto=yes&amp;bg=777&amp;fg=555&amp;text=First slide"
+                         alt="First slide [800x400]" src="{{ entries.2.9 }}" data-holder-rendered="true">
+                    <div class="carousel-caption" style="color: black;position: relative;z-index:2;padding-bottom:2rem;">
+                          <p class="d-block" style="width:98%;margin-left:-1.5%">{{ entries.2.2 }}</p>
+                        <small class="d-block text-muted" style="width:98%;margin-left:-1.5%;margin-top:-1rem">{{ entries.2.7 }}</small>
+                    </div>
+                </a>
+            </div>
+
+            <div class="carousel-item" style="max-height:60vmin; min-height:60vmin;">
+                <a target="_blank" style="text-decoration:none" href="{{ entries.3.1 }}">
+                    <div class="carousel-caption" style="color: black;position: relative;padding-bottom: 0rem;margin-bottom: -1rem;">
+                        <h5 style="margin-left:-1.6%">{{ entries.3.0 }}</h5>
+                    </div>
+                    <img class="w-100" style="min-height:60vmin;max-height:60vmin;object-fit:fill;"
+                         data-src="holder.js/800x400?auto=yes&amp;bg=777&amp;fg=555&amp;text=First slide"
+                         alt="First slide [800x400]" src="{{ entries.3.9 }}" data-holder-rendered="true">
+                    <div class="carousel-caption" style="color: black;position: relative;z-index:2;padding-bottom:2rem;">
+                          <p class="d-block" style="width:98%;margin-left:-1.5%">{{ entries.3.2 }}</p>
+                        <small class="d-block text-muted" style="width:98%;margin-left:-1.5%;margin-top:-1rem">{{ entries.3.7 }}</small>
+                    </div>
+                </a>
+            </div>
+            <div class="carousel-item" style="max-height:60vmin; min-height:60vmin;">
+                <a target="_blank" style="text-decoration:none" href="{{ entries.4.1 }}">
+                    <div class="carousel-caption" style="color: black;position: relative;padding-bottom: 0rem;margin-bottom: -1rem;">
+                        <h5 style="margin-left:-1.6%">{{ entries.4.0 }}</h5>
+                    </div>
+                    <img class="w-100" style="min-height:60vmin;max-height:60vmin;object-fit:fill;"
+                         data-src="holder.js/800x400?auto=yes&amp;bg=777&amp;fg=555&amp;text=First slide"
+                         alt="First slide [800x400]" src="{{ entries.4.9 }}" data-holder-rendered="true">
+                    <div class="carousel-caption" style="color: black;position: relative;z-index:2;padding-bottom:2rem;">
+                          <p class="d-block" style="width:98%;margin-left:-1.5%">{{ entries.4.2 }}</p>
+                        <small class="d-block text-muted" style="width:98%;margin-left:-1.5%;margin-top:-1rem">{{ entries.4.7 }}</small>
+                    </div>
+                </a>
+            </div>
+            <div class="carousel-item" style="max-height:60vmin; min-height:60vmin;">
+                <a target="_blank" style="text-decoration:none" href="{{ entries.5.1 }}">
+                    <div class="carousel-caption" style="color: black;position: relative;padding-bottom: 0rem;margin-bottom: -1rem;">
+                        <h5 style="margin-left:-1.6%">{{ entries.5.0 }}</h5>
+                    </div>
+                    <img class="w-100" style="min-height:60vmin;max-height:60vmin;object-fit:fill;"
+                         data-src="holder.js/800x400?auto=yes&amp;bg=777&amp;fg=555&amp;text=First slide"
+                         alt="First slide [800x400]" src="{{ entries.5.9 }}" data-holder-rendered="true">
+                    <div class="carousel-caption" style="color: black;position: relative;z-index:2;padding-bottom:2rem;">
+                          <p class="d-block" style="width:98%;margin-left:-1.5%">{{ entries.5.2 }}</p>
+                        <small class="d-block text-muted" style="width:98%;margin-left:-1.5%;margin-top:-1rem">{{ entries.5.7 }}</small>
+                    </div>
+                </a>
+            </div>
+            <div class="carousel-item" style="max-height:60vmin; min-height:60vmin;">
+                <a target="_blank" style="text-decoration:none" href="{{ entries.6.1 }}">
+                    <div class="carousel-caption" style="color: black;position: relative;padding-bottom: 0rem;margin-bottom: -1rem;">
+                        <h5 style="margin-left:-1.6%">{{ entries.6.0 }}</h5>
+                    </div>
+                    <img class="w-100" style="min-height:60vmin;max-height:60vmin;object-fit:fill;"
+                         data-src="holder.js/800x400?auto=yes&amp;bg=777&amp;fg=555&amp;text=First slide"
+                         alt="First slide [800x400]" src="{{ entries.6.9 }}" data-holder-rendered="true">
+                    <div class="carousel-caption" style="color: black;position: relative;z-index:2;padding-bottom:2rem;">
+                          <p class="d-block" style="width:98%;margin-left:-1.5%">{{ entries.6.2 }}</p>
+                        <small class="d-block text-muted" style="width:98%;margin-left:-1.5%;margin-top:-1rem">{{ entries.6.7 }}</small>
+                    </div>
+                </a>
+            </div>
+            <div class="carousel-item" style="max-height:60vmin; min-height:60vmin;">
+                <a target="_blank" style="text-decoration:none" href="{{ entries.7.1 }}">
+                    <div class="carousel-caption" style="color: black;position: relative;padding-bottom: 0rem;margin-bottom: -1rem;">
+                        <h5 style="margin-left:-1.6%">{{ entries.7.0 }}</h5>
+                    </div>
+                    <img class="w-100" style="min-height:60vmin;max-height:60vmin;object-fit:fill;"
+                         data-src="holder.js/800x400?auto=yes&amp;bg=777&amp;fg=555&amp;text=First slide"
+                         alt="First slide [800x400]" src="{{ entries.7.9 }}" data-holder-rendered="true">
+                    <div class="carousel-caption" style="color: black;position: relative;z-index:2;padding-bottom:2rem;">
+                          <p class="d-block" style="width:98%;margin-left:-1.5%">{{ entries.7.2 }}</p>
+                        <small class="d-block text-muted" style="width:98%;margin-left:-1.5%;margin-top:-1rem">{{ entries.7.7 }}</small>
+                    </div>
+                </a>
+            </div>
+            <a class="carousel-control-prev" href="#carouselCaptions3" role="button" data-slide="prev">
+                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                <span class="sr-only"></span>
+            </a>
+            <a class="carousel-control-next" href="#carouselCaptions3" role="button" data-slide="next">
+                <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                <span class="sr-only"></span>
+            </a>
+        </div>
+</div>
+
+<div id="carouselCaptions4" class="carousel slide d-none d-sm-block d-md-none" data-ride="carousel">
+    <div class="carousel-inner" style="max-height:60vmin;min-height:86vmin;max-width:60rem;margin-bottom: 0rem;">
+            <ol class="carousel-indicators" style="height:21.5vmin;">
+                <li data-target="#carouselCaptions4" data-slide-to="0" class="active"></li>
+                <li data-target="#carouselCaptions4" data-slide-to="1" class=""></li>
+                <li data-target="#carouselCaptions4" data-slide-to="2" class=""></li>
+                <li data-target="#carouselCaptions4" data-slide-to="3" class=""></li>
+                <li data-target="#carouselCaptions4" data-slide-to="4" class=""></li>
+                <li data-target="#carouselCaptions4" data-slide-to="5" class=""></li>
+                <li data-target="#carouselCaptions4" data-slide-to="6" class=""></li>
+                <li data-target="#carouselCaptions4" data-slide-to="7" class=""></li>
+            </ol>
+            <div class="carousel-item active h-100" style="max-height:60vmin; min-height:60vmin;min-width:100%">
+                <a target="_blank" style="text-decoration:none" href="{{ entries.0.1 }}">
+                    <div class="carousel-caption" style="color: black;position: relative;padding-bottom: 0rem;margin-bottom: -1rem;">
+                        <h5 class="" style="margin-left:-1.6%;margin-right:2%">{{ entries.0.0 }}</h5>
+                    </div>
+                    <img class="w-100" style="min-height:60vmin;max-height:60vmin;object-fit:fill;"
+                         data-src="holder.js/800x400?auto=yes&amp;bg=777&amp;fg=555&amp;text=First slide"
+                         alt="First slide [800x400]" src="{{ entries.0.9 }}" data-holder-rendered="true">
+                    <div class="carousel-caption" style="color: black;position: relative;z-index:2;padding-bottom:2rem;">
+                          <p class="d-block" style="width:98%;margin-left:-1.5%">{{ entries.0.2 }}</p>
+                        <small class="d-block text-muted" style="width:98%;margin-left:-1.5%;margin-top:-1rem">{{ entries.0.7 }}</small>
+                    </div>
+                </a>
+            </div>
+            <div class="carousel-item" style="max-height:60vmin; min-height:60vmin;">
+                <a target="_blank" style="text-decoration:none" href="{{ entries.1.1 }}">
+                    <div class="carousel-caption" style="color: black;position: relative;padding-bottom: 0rem;margin-bottom: -1rem;">
+                        <h5 style="margin-left:-1.6%">{{ entries.1.0 }}</h5>
+                    </div>
+                    <img class="w-100" style="min-height:60vmin;max-height:60vmin;object-fit:fill;"
+                         data-src="holder.js/800x400?auto=yes&amp;bg=777&amp;fg=555&amp;text=First slide"
+                         alt="First slide [800x400]" src="{{ entries.1.9 }}" data-holder-rendered="true">
+                    <div class="carousel-caption" style="color: black;position: relative;z-index:2;padding-bottom:2rem;">
+                          <p class="d-block" style="width:98%;margin-left:-1.5%">{{ entries.1.2 }}</p>
+                        <small class="d-block text-muted" style="width:98%;margin-left:-1.5%;margin-top:-1rem">{{ entries.1.7 }}</small>
+                    </div>
+                </a>
+            </div>
+            <div class="carousel-item" style="max-height:60vmin; min-height:60vmin;">
+                <a target="_blank" style="text-decoration:none" href="{{ entries.2.1 }}">
+                    <div class="carousel-caption" style="color: black;position: relative;padding-bottom: 0rem;margin-bottom: -1rem;">
+                        <h5 style="margin-left:-1.6%">{{ entries.2.0 }}</h5>
+                    </div>
+                    <img class="w-100" style="min-height:60vmin;max-height:60vmin;object-fit:fill;"
+                         data-src="holder.js/800x400?auto=yes&amp;bg=777&amp;fg=555&amp;text=First slide"
+                         alt="First slide [800x400]" src="{{ entries.2.9 }}" data-holder-rendered="true">
+                    <div class="carousel-caption" style="color: black;position: relative;z-index:2;padding-bottom:2rem;">
+                          <p class="d-block" style="width:98%;margin-left:-1.5%">{{ entries.2.2 }}</p>
+                        <small class="d-block text-muted" style="width:98%;margin-left:-1.5%;margin-top:-1rem">{{ entries.2.7 }}</small>
+                    </div>
+                </a>
+            </div>
+
+            <div class="carousel-item" style="max-height:60vmin; min-height:60vmin;">
+                <a target="_blank" style="text-decoration:none" href="{{ entries.3.1 }}">
+                    <div class="carousel-caption" style="color: black;position: relative;padding-bottom: 0rem;margin-bottom: -1rem;">
+                        <h5 style="margin-left:-1.6%">{{ entries.3.0 }}</h5>
+                    </div>
+                    <img class="w-100" style="min-height:60vmin;max-height:60vmin;object-fit:fill;"
+                         data-src="holder.js/800x400?auto=yes&amp;bg=777&amp;fg=555&amp;text=First slide"
+                         alt="First slide [800x400]" src="{{ entries.3.9 }}" data-holder-rendered="true">
+                    <div class="carousel-caption" style="color: black;position: relative;z-index:2;padding-bottom:2rem;">
+                          <p class="d-block" style="width:98%;margin-left:-1.5%">{{ entries.3.2 }}</p>
+                        <small class="d-block text-muted" style="width:98%;margin-left:-1.5%;margin-top:-1rem">{{ entries.3.7 }}</small>
+                    </div>
+                </a>
+            </div>
+            <div class="carousel-item" style="max-height:60vmin; min-height:60vmin;">
+                <a target="_blank" style="text-decoration:none" href="{{ entries.4.1 }}">
+                    <div class="carousel-caption" style="color: black;position: relative;padding-bottom: 0rem;margin-bottom: -1rem;">
+                        <h5 style="margin-left:-1.6%">{{ entries.4.0 }}</h5>
+                    </div>
+                    <img class="w-100" style="min-height:60vmin;max-height:60vmin;object-fit:fill;"
+                         data-src="holder.js/800x400?auto=yes&amp;bg=777&amp;fg=555&amp;text=First slide"
+                         alt="First slide [800x400]" src="{{ entries.4.9 }}" data-holder-rendered="true">
+                    <div class="carousel-caption" style="color: black;position: relative;z-index:2;padding-bottom:2rem;">
+                          <p class="d-block" style="width:98%;margin-left:-1.5%">{{ entries.4.2 }}</p>
+                        <small class="d-block text-muted" style="width:98%;margin-left:-1.5%;margin-top:-1rem">{{ entries.4.7 }}</small>
+                    </div>
+                </a>
+            </div>
+            <div class="carousel-item" style="max-height:60vmin; min-height:60vmin;">
+                <a target="_blank" style="text-decoration:none" href="{{ entries.5.1 }}">
+                    <div class="carousel-caption" style="color: black;position: relative;padding-bottom: 0rem;margin-bottom: -1rem;">
+                        <h5 style="margin-left:-1.6%">{{ entries.5.0 }}</h5>
+                    </div>
+                    <img class="w-100" style="min-height:60vmin;max-height:60vmin;object-fit:fill;"
+                         data-src="holder.js/800x400?auto=yes&amp;bg=777&amp;fg=555&amp;text=First slide"
+                         alt="First slide [800x400]" src="{{ entries.5.9 }}" data-holder-rendered="true">
+                    <div class="carousel-caption" style="color: black;position: relative;z-index:2;padding-bottom:2rem;">
+                          <p class="d-block" style="width:98%;margin-left:-1.5%">{{ entries.5.2 }}</p>
+                        <small class="d-block text-muted" style="width:98%;margin-left:-1.5%;margin-top:-1rem">{{ entries.5.7 }}</small>
+                    </div>
+                </a>
+            </div>
+            <div class="carousel-item" style="max-height:60vmin; min-height:60vmin;">
+                <a target="_blank" style="text-decoration:none" href="{{ entries.6.1 }}">
+                    <div class="carousel-caption" style="color: black;position: relative;padding-bottom: 0rem;margin-bottom: -1rem;">
+                        <h5 style="margin-left:-1.6%">{{ entries.6.0 }}</h5>
+                    </div>
+                    <img class="w-100" style="min-height:60vmin;max-height:60vmin;object-fit:fill;"
+                         data-src="holder.js/800x400?auto=yes&amp;bg=777&amp;fg=555&amp;text=First slide"
+                         alt="First slide [800x400]" src="{{ entries.6.9 }}" data-holder-rendered="true">
+                    <div class="carousel-caption" style="color: black;position: relative;z-index:2;padding-bottom:2rem;">
+                          <p class="d-block" style="width:98%;margin-left:-1.5%">{{ entries.6.2 }}</p>
+                        <small class="d-block text-muted" style="width:98%;margin-left:-1.5%;margin-top:-1rem">{{ entries.6.7 }}</small>
+                    </div>
+                </a>
+            </div>
+            <div class="carousel-item" style="max-height:60vmin; min-height:60vmin;">
+                <a target="_blank" style="text-decoration:none" href="{{ entries.7.1 }}">
+                    <div class="carousel-caption" style="color: black;position: relative;padding-bottom: 0rem;margin-bottom: -1rem;">
+                        <h5 style="margin-left:-1.6%">{{ entries.7.0 }}</h5>
+                    </div>
+                    <img class="w-100" style="min-height:60vmin;max-height:60vmin;object-fit:fill;"
+                         data-src="holder.js/800x400?auto=yes&amp;bg=777&amp;fg=555&amp;text=First slide"
+                         alt="First slide [800x400]" src="{{ entries.7.9 }}" data-holder-rendered="true">
+                    <div class="carousel-caption" style="color: black;position: relative;z-index:2;padding-bottom:2rem;">
+                          <p class="d-block" style="width:98%;margin-left:-1.5%">{{ entries.7.2 }}</p>
+                        <small class="d-block text-muted" style="width:98%;margin-left:-1.5%;margin-top:-1rem">{{ entries.7.7 }}</small>
+                    </div>
+                </a>
+            </div>
+            <a class="carousel-control-prev" href="#carouselCaptions4" role="button" data-slide="prev">
+                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                <span class="sr-only"></span>
+            </a>
+            <a class="carousel-control-next" href="#carouselCaptions4" role="button" data-slide="next">
+                <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                <span class="sr-only"></span>
+            </a>
+        </div>
+</div>
+
+<div id="carouselCaptions5" class="carousel slide d-sm-none carouselhide" data-ride="carousel">
+    <div class="carousel-inner" style="max-height:60vmin;min-height:94vmin;max-width:60rem;margin-bottom: 0rem;">
+            <ol class="carousel-indicators" style="height:27vmin;">
+                <li data-target="#carouselCaptions5" data-slide-to="0" class="active"></li>
+                <li data-target="#carouselCaptions5" data-slide-to="1" class=""></li>
+                <li data-target="#carouselCaptions5" data-slide-to="2" class=""></li>
+                <li data-target="#carouselCaptions5" data-slide-to="3" class=""></li>
+                <li data-target="#carouselCaptions5" data-slide-to="4" class=""></li>
+                <li data-target="#carouselCaptions5" data-slide-to="5" class=""></li>
+                <li data-target="#carouselCaptions5" data-slide-to="6" class=""></li>
+                <li data-target="#carouselCaptions5" data-slide-to="7" class=""></li>
+            </ol>
+            <div class="carousel-item active h-100" style="max-height:60vmin; min-height:60vmin;min-width:100%">
+                <a target="_blank" style="text-decoration:none" href="{{ entries.0.1 }}">
+                    <div class="carousel-caption" style="color: black;position: relative;padding-bottom: 0rem;margin-bottom: -1rem;">
+                        <h5 class="" style="margin-left:-1.6%;margin-right:2%">{{ entries.0.0 }}</h5>
+                    </div>
+                    <img class="w-100" style="min-height:60vmin;max-height:60vmin;object-fit:fill;"
+                         data-src="holder.js/800x400?auto=yes&amp;bg=777&amp;fg=555&amp;text=First slide"
+                         alt="First slide [800x400]" src="{{ entries.0.9 }}" data-holder-rendered="true">
+                    <div class="carousel-caption" style="color: black;position: relative;z-index:2;padding-bottom:2rem;">
+                          <p class="d-block" style="width:98%;margin-left:-1.5%">{{ entries.0.2 }}</p>
+                        <small class="d-block text-muted" style="width:98%;margin-left:-1.5%;margin-top:-1rem">{{ entries.0.7 }}</small>
+                    </div>
+                </a>
+            </div>
+            <div class="carousel-item" style="max-height:60vmin; min-height:60vmin;">
+                <a target="_blank" style="text-decoration:none" href="{{ entries.1.1 }}">
+                    <div class="carousel-caption" style="color: black;position: relative;padding-bottom: 0rem;margin-bottom: -1rem;">
+                        <h5 style="margin-left:-1.6%">{{ entries.1.0 }}</h5>
+                    </div>
+                    <img class="w-100" style="min-height:60vmin;max-height:60vmin;object-fit:fill;"
+                         data-src="holder.js/800x400?auto=yes&amp;bg=777&amp;fg=555&amp;text=First slide"
+                         alt="First slide [800x400]" src="{{ entries.1.9 }}" data-holder-rendered="true">
+                    <div class="carousel-caption" style="color: black;position: relative;z-index:2;padding-bottom:2rem;">
+                          <p class="d-block" style="width:98%;margin-left:-1.5%">{{ entries.1.2 }}</p>
+                        <small class="d-block text-muted" style="width:98%;margin-left:-1.5%;margin-top:-1rem">{{ entries.1.7 }}</small>
+                    </div>
+                </a>
+            </div>
+            <div class="carousel-item" style="max-height:60vmin; min-height:60vmin;">
+                <a target="_blank" style="text-decoration:none" href="{{ entries.2.1 }}">
+                    <div class="carousel-caption" style="color: black;position: relative;padding-bottom: 0rem;margin-bottom: -1rem;">
+                        <h5 style="margin-left:-1.6%">{{ entries.2.0 }}</h5>
+                    </div>
+                    <img class="w-100" style="min-height:60vmin;max-height:60vmin;object-fit:fill;"
+                         data-src="holder.js/800x400?auto=yes&amp;bg=777&amp;fg=555&amp;text=First slide"
+                         alt="First slide [800x400]" src="{{ entries.2.9 }}" data-holder-rendered="true">
+                    <div class="carousel-caption" style="color: black;position: relative;z-index:2;padding-bottom:2rem;">
+                          <p class="d-block" style="width:98%;margin-left:-1.5%">{{ entries.2.2 }}</p>
+                        <small class="d-block text-muted" style="width:98%;margin-left:-1.5%;margin-top:-1rem">{{ entries.2.7 }}</small>
+                    </div>
+                </a>
+            </div>
+
+            <div class="carousel-item" style="max-height:60vmin; min-height:60vmin;">
+                <a target="_blank" style="text-decoration:none" href="{{ entries.3.1 }}">
+                    <div class="carousel-caption" style="color: black;position: relative;padding-bottom: 0rem;margin-bottom: -1rem;">
+                        <h5 style="margin-left:-1.6%">{{ entries.3.0 }}</h5>
+                    </div>
+                    <img class="w-100" style="min-height:60vmin;max-height:60vmin;object-fit:fill;"
+                         data-src="holder.js/800x400?auto=yes&amp;bg=777&amp;fg=555&amp;text=First slide"
+                         alt="First slide [800x400]" src="{{ entries.3.9 }}" data-holder-rendered="true">
+                    <div class="carousel-caption" style="color: black;position: relative;z-index:2;padding-bottom:2rem;">
+                          <p class="d-block" style="width:98%;margin-left:-1.5%">{{ entries.3.2 }}</p>
+                        <small class="d-block text-muted" style="width:98%;margin-left:-1.5%;margin-top:-1rem">{{ entries.3.7 }}</small>
+                    </div>
+                </a>
+            </div>
+            <div class="carousel-item" style="max-height:60vmin; min-height:60vmin;">
+                <a target="_blank" style="text-decoration:none" href="{{ entries.4.1 }}">
+                    <div class="carousel-caption" style="color: black;position: relative;padding-bottom: 0rem;margin-bottom: -1rem;">
+                        <h5 style="margin-left:-1.6%">{{ entries.4.0 }}</h5>
+                    </div>
+                    <img class="w-100" style="min-height:60vmin;max-height:60vmin;object-fit:fill;"
+                         data-src="holder.js/800x400?auto=yes&amp;bg=777&amp;fg=555&amp;text=First slide"
+                         alt="First slide [800x400]" src="{{ entries.4.9 }}" data-holder-rendered="true">
+                    <div class="carousel-caption" style="color: black;position: relative;z-index:2;padding-bottom:2rem;">
+                          <p class="d-block" style="width:98%;margin-left:-1.5%">{{ entries.4.2 }}</p>
+                        <small class="d-block text-muted" style="width:98%;margin-left:-1.5%;margin-top:-1rem">{{ entries.4.7 }}</small>
+                    </div>
+                </a>
+            </div>
+            <div class="carousel-item" style="max-height:60vmin; min-height:60vmin;">
+                <a target="_blank" style="text-decoration:none" href="{{ entries.5.1 }}">
+                    <div class="carousel-caption" style="color: black;position: relative;padding-bottom: 0rem;margin-bottom: -1rem;">
+                        <h5 style="margin-left:-1.6%">{{ entries.5.0 }}</h5>
+                    </div>
+                    <img class="w-100" style="min-height:60vmin;max-height:60vmin;object-fit:fill;"
+                         data-src="holder.js/800x400?auto=yes&amp;bg=777&amp;fg=555&amp;text=First slide"
+                         alt="First slide [800x400]" src="{{ entries.5.9 }}" data-holder-rendered="true">
+                    <div class="carousel-caption" style="color: black;position: relative;z-index:2;padding-bottom:2rem;">
+                          <p class="d-block" style="width:98%;margin-left:-1.5%">{{ entries.5.2 }}</p>
+                        <small class="d-block text-muted" style="width:98%;margin-left:-1.5%;margin-top:-1rem">{{ entries.5.7 }}</small>
+                    </div>
+                </a>
+            </div>
+            <div class="carousel-item" style="max-height:60vmin; min-height:60vmin;">
+                <a target="_blank" style="text-decoration:none" href="{{ entries.6.1 }}">
+                    <div class="carousel-caption" style="color: black;position: relative;padding-bottom: 0rem;margin-bottom: -1rem;">
+                        <h5 style="margin-left:-1.6%">{{ entries.6.0 }}</h5>
+                    </div>
+                    <img class="w-100" style="min-height:60vmin;max-height:60vmin;object-fit:fill;"
+                         data-src="holder.js/800x400?auto=yes&amp;bg=777&amp;fg=555&amp;text=First slide"
+                         alt="First slide [800x400]" src="{{ entries.6.9 }}" data-holder-rendered="true">
+                    <div class="carousel-caption" style="color: black;position: relative;z-index:2;padding-bottom:2rem;">
+                          <p class="d-block" style="width:98%;margin-left:-1.5%">{{ entries.6.2 }}</p>
+                        <small class="d-block text-muted" style="width:98%;margin-left:-1.5%;margin-top:-1rem">{{ entries.6.7 }}</small>
+                    </div>
+                </a>
+            </div>
+            <div class="carousel-item" style="max-height:60vmin; min-height:60vmin;">
+                <a target="_blank" style="text-decoration:none" href="{{ entries.7.1 }}">
+                    <div class="carousel-caption" style="color: black;position: relative;padding-bottom: 0rem;margin-bottom: -1rem;">
+                        <h5 style="margin-left:-1.6%">{{ entries.7.0 }}</h5>
+                    </div>
+                    <img class="w-100" style="min-height:60vmin;max-height:60vmin;object-fit:fill;"
+                         data-src="holder.js/800x400?auto=yes&amp;bg=777&amp;fg=555&amp;text=First slide"
+                         alt="First slide [800x400]" src="{{ entries.7.9 }}" data-holder-rendered="true">
+                    <div class="carousel-caption" style="color: black;position: relative;z-index:2;padding-bottom:2rem;">
+                          <p class="d-block" style="width:98%;margin-left:-1.5%">{{ entries.7.2 }}</p>
+                        <small class="d-block text-muted" style="width:98%;margin-left:-1.5%;margin-top:-1rem">{{ entries.7.7 }}</small>
+                    </div>
+                </a>
+            </div>
+            <a class="carousel-control-prev" href="#carouselCaptions5" role="button" data-slide="prev">
+                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                <span class="sr-only"></span>
+            </a>
+            <a class="carousel-control-next" href="#carouselCaptions5" role="button" data-slide="next">
+                <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                <span class="sr-only"></span>
+            </a>
+        </div>
+</div>
+
+<div id="carouselCaptions6" class="carousel slide carouselshow" data-ride="carousel">
+    <div class="carousel-inner" style="max-height:60vmin;min-height:106.5vmin;max-width:60rem;margin-bottom: 0rem;">
+            <ol class="carousel-indicators" style="height:36.5vmin;">
+                <li data-target="#carouselCaptions6" data-slide-to="0" class="active"></li>
+                <li data-target="#carouselCaptions6" data-slide-to="1" class=""></li>
+                <li data-target="#carouselCaptions6" data-slide-to="2" class=""></li>
+                <li data-target="#carouselCaptions6" data-slide-to="3" class=""></li>
+                <li data-target="#carouselCaptions6" data-slide-to="4" class=""></li>
+                <li data-target="#carouselCaptions6" data-slide-to="5" class=""></li>
+                <li data-target="#carouselCaptions6" data-slide-to="6" class=""></li>
+                <li data-target="#carouselCaptions6" data-slide-to="7" class=""></li>
+            </ol>
+            <div class="carousel-item active h-100" style="max-height:60vmin; min-height:60vmin;min-width:100%">
+                <a target="_blank" style="text-decoration:none" href="{{ entries.0.1 }}">
+                    <div class="carousel-caption" style="color: black;position: relative;padding-bottom: 0rem;margin-bottom: -1rem;">
+                        <h5 class="" style="margin-left:-1.6%;margin-right:2%">{{ entries.0.0 }}</h5>
+                    </div>
+                    <img class="w-100" style="min-height:60vmin;max-height:60vmin;object-fit:fill;"
+                         data-src="holder.js/800x400?auto=yes&amp;bg=777&amp;fg=555&amp;text=First slide"
+                         alt="First slide [800x400]" src="{{ entries.0.9 }}" data-holder-rendered="true">
+                    <div class="carousel-caption" style="color: black;position: relative;z-index:2;padding-bottom:2rem;">
+                          <p class="d-block" style="width:98%;margin-left:-1.5%">{{ entries.0.2 |truncatewords:26  }}</p>
+                        <small class="d-block text-muted" style="width:98%;margin-left:-1.5%;margin-top:-1rem">{{ entries.0.7 }}</small>
+                    </div>
+                </a>
+            </div>
+            <div class="carousel-item" style="max-height:60vmin; min-height:60vmin;">
+                <a target="_blank" style="text-decoration:none" href="{{ entries.1.1 }}">
+                    <div class="carousel-caption" style="color: black;position: relative;padding-bottom: 0rem;margin-bottom: -1rem;">
+                        <h5 style="margin-left:-1.6%">{{ entries.1.0 }}</h5>
+                    </div>
+                    <img class="w-100" style="min-height:60vmin;max-height:60vmin;object-fit:fill;"
+                         data-src="holder.js/800x400?auto=yes&amp;bg=777&amp;fg=555&amp;text=First slide"
+                         alt="First slide [800x400]" src="{{ entries.1.9 }}" data-holder-rendered="true">
+                    <div class="carousel-caption" style="color: black;position: relative;z-index:2;padding-bottom:2rem;">
+                          <p class="d-block" style="width:98%;margin-left:-1.5%">{{ entries.1.2 |truncatewords:26  }}</p>
+                        <small class="d-block text-muted" style="width:98%;margin-left:-1.5%;margin-top:-1rem">{{ entries.1.7 }}</small>
+                    </div>
+                </a>
+            </div>
+            <div class="carousel-item" style="max-height:60vmin; min-height:60vmin;">
+                <a target="_blank" style="text-decoration:none" href="{{ entries.2.1 }}">
+                    <div class="carousel-caption" style="color: black;position: relative;padding-bottom: 0rem;margin-bottom: -1rem;">
+                        <h5 style="margin-left:-1.6%">{{ entries.2.0 }}</h5>
+                    </div>
+                    <img class="w-100" style="min-height:60vmin;max-height:60vmin;object-fit:fill;"
+                         data-src="holder.js/800x400?auto=yes&amp;bg=777&amp;fg=555&amp;text=First slide"
+                         alt="First slide [800x400]" src="{{ entries.2.9 }}" data-holder-rendered="true">
+                    <div class="carousel-caption" style="color: black;position: relative;z-index:2;padding-bottom:2rem;">
+                          <p class="d-block" style="width:98%;margin-left:-1.5%">{{ entries.2.2 |truncatewords:26  }}</p>
+                        <small class="d-block text-muted" style="width:98%;margin-left:-1.5%;margin-top:-1rem">{{ entries.2.7 }}</small>
+                    </div>
+                </a>
+            </div>
+
+            <div class="carousel-item" style="max-height:60vmin; min-height:60vmin;">
+                <a target="_blank" style="text-decoration:none" href="{{ entries.3.1 }}">
+                    <div class="carousel-caption" style="color: black;position: relative;padding-bottom: 0rem;margin-bottom: -1rem;">
+                        <h5 style="margin-left:-1.6%">{{ entries.3.0 }}</h5>
+                    </div>
+                    <img class="w-100" style="min-height:60vmin;max-height:60vmin;object-fit:fill;"
+                         data-src="holder.js/800x400?auto=yes&amp;bg=777&amp;fg=555&amp;text=First slide"
+                         alt="First slide [800x400]" src="{{ entries.3.9 }}" data-holder-rendered="true">
+                    <div class="carousel-caption" style="color: black;position: relative;z-index:2;padding-bottom:2rem;">
+                          <p class="d-block" style="width:98%;margin-left:-1.5%">{{ entries.3.2 |truncatewords:26  }}</p>
+                        <small class="d-block text-muted" style="width:98%;margin-left:-1.5%;margin-top:-1rem">{{ entries.3.7 }}</small>
+                    </div>
+                </a>
+            </div>
+            <div class="carousel-item" style="max-height:60vmin; min-height:60vmin;">
+                <a target="_blank" style="text-decoration:none" href="{{ entries.4.1 }}">
+                    <div class="carousel-caption" style="color: black;position: relative;padding-bottom: 0rem;margin-bottom: -1rem;">
+                        <h5 style="margin-left:-1.6%">{{ entries.4.0 }}</h5>
+                    </div>
+                    <img class="w-100" style="min-height:60vmin;max-height:60vmin;object-fit:fill;"
+                         data-src="holder.js/800x400?auto=yes&amp;bg=777&amp;fg=555&amp;text=First slide"
+                         alt="First slide [800x400]" src="{{ entries.4.9 }}" data-holder-rendered="true">
+                    <div class="carousel-caption" style="color: black;position: relative;z-index:2;padding-bottom:2rem;">
+                          <p class="d-block" style="width:98%;margin-left:-1.5%">{{ entries.4.2 |truncatewords:26  }}</p>
+                        <small class="d-block text-muted" style="width:98%;margin-left:-1.5%;margin-top:-1rem">{{ entries.4.7 }}</small>
+                    </div>
+                </a>
+            </div>
+            <div class="carousel-item" style="max-height:60vmin; min-height:60vmin;">
+                <a target="_blank" style="text-decoration:none" href="{{ entries.5.1 }}">
+                    <div class="carousel-caption" style="color: black;position: relative;padding-bottom: 0rem;margin-bottom: -1rem;">
+                        <h5 style="margin-left:-1.6%">{{ entries.5.0 }}</h5>
+                    </div>
+                    <img class="w-100" style="min-height:60vmin;max-height:60vmin;object-fit:fill;"
+                         data-src="holder.js/800x400?auto=yes&amp;bg=777&amp;fg=555&amp;text=First slide"
+                         alt="First slide [800x400]" src="{{ entries.5.9 }}" data-holder-rendered="true">
+                    <div class="carousel-caption" style="color: black;position: relative;z-index:2;padding-bottom:2rem;">
+                          <p class="d-block" style="width:98%;margin-left:-1.5%">{{ entries.5.2 |truncatewords:26  }}</p>
+                        <small class="d-block text-muted" style="width:98%;margin-left:-1.5%;margin-top:-1rem">{{ entries.5.7 }}</small>
+                    </div>
+                </a>
+            </div>
+            <div class="carousel-item" style="max-height:60vmin; min-height:60vmin;">
+                <a target="_blank" style="text-decoration:none" href="{{ entries.6.1 }}">
+                    <div class="carousel-caption" style="color: black;position: relative;padding-bottom: 0rem;margin-bottom: -1rem;">
+                        <h5 style="margin-left:-1.6%">{{ entries.6.0 }}</h5>
+                    </div>
+                    <img class="w-100" style="min-height:60vmin;max-height:60vmin;object-fit:fill;"
+                         data-src="holder.js/800x400?auto=yes&amp;bg=777&amp;fg=555&amp;text=First slide"
+                         alt="First slide [800x400]" src="{{ entries.6.9 }}" data-holder-rendered="true">
+                    <div class="carousel-caption" style="color: black;position: relative;z-index:2;padding-bottom:2rem;">
+                          <p class="d-block" style="width:98%;margin-left:-1.5%">{{ entries.6.2 |truncatewords:26  }}</p>
+                        <small class="d-block text-muted" style="width:98%;margin-left:-1.5%;margin-top:-1rem">{{ entries.6.7 }}</small>
+                    </div>
+                </a>
+            </div>
+            <div class="carousel-item" style="max-height:60vmin; min-height:60vmin;">
+                <a target="_blank" style="text-decoration:none" href="{{ entries.7.1 }}">
+                    <div class="carousel-caption" style="color: black;position: relative;padding-bottom: 0rem;margin-bottom: -1rem;">
+                        <h5 style="margin-left:-1.6%">{{ entries.7.0 }}</h5>
+                    </div>
+                    <img class="w-100" style="min-height:60vmin;max-height:60vmin;object-fit:fill;"
+                         data-src="holder.js/800x400?auto=yes&amp;bg=777&amp;fg=555&amp;text=First slide"
+                         alt="First slide [800x400]" src="{{ entries.7.9 }}" data-holder-rendered="true">
+                    <div class="carousel-caption" style="color: black;position: relative;z-index:2;padding-bottom:2rem;">
+                          <p class="d-block" style="width:98%;margin-left:-1.5%">{{ entries.7.2 |truncatewords:26  }}</p>
+                        <small class="d-block text-muted" style="width:98%;margin-left:-1.5%;margin-top:-1rem">{{ entries.7.7 }}</small>
+                    </div>
+                </a>
+            </div>
+            <a class="carousel-control-prev" href="#carouselCaptions6" role="button" data-slide="prev">
+                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                <span class="sr-only"></span>
+            </a>
+            <a class="carousel-control-next" href="#carouselCaptions6" role="button" data-slide="next">
+                <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                <span class="sr-only"></span>
+            </a>
+        </div>
+</div>
+
+
+</div>
+<div class="container">
+<div style="margin-top: 1rem;margin-bottom: 1rem;" class="btn-group d-block" role="group" aria-label="Basic example">
+  <button id="latest_news" type="button" class="btn btn-secondary">Latest News</button>
+  <button id="developers" type="button" class="btn btn-secondary">Developers</button>
+</div>
+</div>
+
+<div id="news_content" class="container">
+    <div class="infinite-container list">
+        <h3>Latest News</h3>
+        <small class="text-muted" style="margin-top:-0.5rem;margin-bottom:0.5rem;display: block;">Updated {{ g_datetime|time }} EST</small>
+        {% for g_title, g_link, g_snippet, g_thumbnail, g_thumbnail_ref, dev_name_query, dev_slug_query, link_com, date_extract, og_img in latest_news %}
+        <div class="infinite-item">
+                <div class="list-group bg-light" style="max-width:43rem">
+                    <a style="text-decoration:none; color:#212529;" href="{{ g_link }}" target="_blank">
+                        <div class="list-group-item bg-light" style="margin-bottom:0.5rem;overflow:hidden;" aria-current="true">
+                            <strong class="d-block" style="white-space:pre-wrap;font-size:1.2rem;margin-bottom:0.5rem"
+                                    class="list-group-item-text lead strong name">{{ g_title }}</strong>
+                            <div class="d-none d-sm-block">
+                                {% if og_img != 'none' %}
+                                <img class="d-inline" loading="lazy" style="width:100%; height:36vmin" src="{{ og_img }}" alt="not found" onerror="this.onerror=null; this.src='{{ g_thumbnail }}'">
+                                {% else %}
+                                    {% if g_thumbnail_ref == 'yes' %}
+                                        <img class="d-inline" loading="lazy" style="width:100%; height:36vmin" src="{{ g_thumbnail }}" alt="not found" onerror="this.onerror=null; this.src='{% static 'logo_default.svg' %}'">
+                                    {% else %}
+                                        {% if g_thumbnail_ref == 'no_dev' %}
+                                            <img class="d-inline" loading="lazy" style="width:100%; height:36vmin" src="{% static g_thumbnail %}" alt="not found" onerror="this.onerror=null; this.src='{% static 'logo_default.svg' %}'">
+                                        {% elif g_thumbnail_ref == 'no_query' %}
+                                            <img class="d-inline" loading="lazy" style="width:100%; height:36vmin" src="{% static 'logo_default.svg' %}" alt="not found">
+                                        {% endif %}
+                                    {% endif %}
+                                {% endif %}
+                            </div>
+                            <div class="d-block d-sm-none">
+                                {% if og_img != 'none' %}
+                                <img class="d-inline" loading="lazy" style="width:100%; height:57vmin" src="{{ og_img }}" alt="not found" onerror="this.onerror=null; this.src='{{ g_thumbnail }}'">
+                                {% else %}
+                                    {% if g_thumbnail_ref == 'yes' %}
+                                        <img class="d-inline" loading="lazy" style="width:100%; height:57vmin" src="{{ g_thumbnail }}" alt="not found" onerror="this.onerror=null; this.src='{% static 'logo_default.svg' %}'">
+                                    {% else %}
+                                        <img class="d-inline" loading="lazy" style="width:100%; height:57vmin" src="{% static g_thumbnail %}" alt="not found" onerror="this.onerror=null; this.src='{% static 'logo_default.svg' %}'">
+                                    {% endif %}
+                                {% endif %}
+                            </div>
+                            <div class="d-block" style="margin-top:0.5rem">{{ g_snippet }}</div>
+                            <small style="" class="d-block; text-muted">{{ link_com }}</small>
+                        </div>
+                    </a>
+                </div>
+            </div>
+            {% endfor %}
+    </div>
+{% if latest_news.has_next %}
+<a class="infinite-more-link" href="?page={{ latest_news.next_page_number }}">More</a>
+{% endif %}
+</div>
+
+
+
+{% include "homepage/dev_list.html" %}
+
+
+{% endblock content %}
+
+
+{% block header_script %}
+$(document).ready(function(){
+  $("#latest_news").click(function(){
+    $("#news_content").show();
+    $("#dev_content").hide();
+  });
+  $("#developers").click(function(){
+    $("#news_content").hide();
+    $("#dev_content").show();
+  });
+});
+{% endblock header_script %}
+
+})

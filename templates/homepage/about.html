@@ -1,0 +1,21 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block content %}
+<div class="container">
+    <p>This is a gaming news site with the primary purpose of fetching, compiling, and serving to you 1000s of
+        gaming-related news articles per day from 30+ gaming websites with article updates every hour from 6 am to
+        midnight EST. The scope of this website continues to expand over time.</p>
+
+    <p>Create an account to enable the feature of 'liking' a developer. This will build a customized list of your
+        favorite developers, which is accessible by selecting 'Favorites' in the navigator bar.</p>
+
+    <p>A showcase of the code used to develop this website is located in a <a target="_blank"
+                                                                              href="https://github.com/Utlak88/Gamer-News-Depot">repository
+        on Stephen Utlak's GitHub page</a>.</p>
+
+    <p>Get to know more about the website developer's background <a href="{% url 'homepage:background' %}">here</a>.</p>
+
+</div>
+
+{% endblock content %}
